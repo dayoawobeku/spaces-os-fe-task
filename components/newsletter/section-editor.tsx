@@ -78,7 +78,7 @@ function SectionContentEditor({
           </div>
           <Textarea
             id={`content-${section.id}`}
-            placeholder="Enter your content with markdown formatting...&#10;&#10;Examples:&#10;**Bold text**&#10;*Italic text*&#10;[Link text](https://example.com)&#10;# Heading 1&#10;## Heading 2&#10;- Bullet point"
+placeholder="Enter your content with markdown formatting...&#10;&#10;Examples:&#10;**Bold text**&#10;*Italic text*&#10;[Link text](https://example.com)&#10;# Heading 1&#10;## Heading 2&#10;- Bullet point"
             value={section.content}
             onChange={(e) => updateSection({ content: e.target.value })}
             rows={6}
@@ -223,7 +223,7 @@ export function SectionEditor({
       <CardContent className="space-y-4">
         {sortedSections.length === 0 ? (
           <div className="text-center py-8 text-gray-500">
-            <p>No sections yet. Click "Add Section" to get started.</p>
+            <p>No sections yet. Click &quot;Add Section&quot; to get started.</p>
           </div>
         ) : (
           sortedSections.map((section, index) => (

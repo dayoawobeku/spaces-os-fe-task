@@ -11,7 +11,7 @@ export function getNewsletters(): Newsletter[] {
 
     const newsletters = JSON.parse(stored);
 
-    return newsletters.map((newsletter: any) => ({
+    return newsletters.map((newsletter: Newsletter & { createdAt: string; updatedAt: string; scheduledAt?: string }) => ({
       ...newsletter,
       createdAt: new Date(newsletter.createdAt),
       updatedAt: new Date(newsletter.updatedAt),

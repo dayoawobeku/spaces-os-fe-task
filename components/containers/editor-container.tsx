@@ -57,7 +57,7 @@ export function NewsletterEditorContainer({
     }, 2000);
 
     return () => clearTimeout(autoSave);
-  }, [newsletter.subject, newsletter.sections, newsletter.templateId]);
+  }, [newsletter]);
 
   const handleSubjectChange = (subject: string) => {
     setNewsletter((prev) => ({ ...prev, subject }));

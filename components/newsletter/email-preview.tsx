@@ -81,7 +81,7 @@ export function EmailPreview({ newsletter }: EmailPreviewProps) {
       setIsLoading(false);
       setIsUpdating(false);
     }
-  }, [newsletter.templateId, newsletter.subject, newsletter.sections]);
+  }, [newsletter]);
 
   useEffect(() => {
     if (timeoutRef.current) {
