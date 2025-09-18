@@ -11,14 +11,22 @@ export function getNewsletters(): Newsletter[] {
 
     const newsletters = JSON.parse(stored);
 
-    return newsletters.map((newsletter: Newsletter & { createdAt: string; updatedAt: string; scheduledAt?: string }) => ({
-      ...newsletter,
-      createdAt: new Date(newsletter.createdAt),
-      updatedAt: new Date(newsletter.updatedAt),
-      scheduledAt: newsletter.scheduledAt
-        ? new Date(newsletter.scheduledAt)
-        : undefined,
-    }));
+    return newsletters.map(
+      (
+        newsletter: Newsletter & {
+          createdAt: string;
+          updatedAt: string;
+          scheduledAt?: string;
+        }
+      ) => ({
+        ...newsletter,
+        createdAt: new Date(newsletter.createdAt),
+        updatedAt: new Date(newsletter.updatedAt),
+        scheduledAt: newsletter.scheduledAt
+          ? new Date(newsletter.scheduledAt)
+          : undefined,
+      })
+    );
   } catch (error) {
     console.error("Error loading newsletters from localStorage:", error);
     return [];
